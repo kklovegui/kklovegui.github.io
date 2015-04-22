@@ -122,6 +122,70 @@
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2015-04-22T00:00:00-04:00"><a href="/flask-01/">April 22, 2015</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About xiaofei">xiaofei</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+        Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/flask-01/" rel="bookmark" title="flask 简介" itemprop="url">flask 简介</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>最近用flask给手机端做web api，这里记录最近学习心得。</p>
+
+<h3 id="section">简介</h3>
+<p>flask是一个微型web框架，用python进行开发，flask结构清晰简单，容易学习。</p>
+
+<ul>
+  <li>创建一个新的python开发虚拟环境，不会同学google之。</li>
+  <li>安装flask</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="x">pip install flask</span></code></pre></div>
+
+<p>-官网的demo,新建一个python文件。</p>
+
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="x">from flask import Flask</span>
+<span class="x">app = Flask(__name__)</span>
+
+<span class="x">@app.route(&#39;/&#39;)</span>
+<span class="x">def hello():</span>
+<span class="x">    return &#39;hello world&#39;</span>
+
+<span class="x">if __name__ == &#39;__main__&#39;:</span>
+<span class="x">   app.run()</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="x">python filename.py</span></code></pre></div>
+
+<p>浏览器访问 http://localhost:5000/</p>
+
+<p>一个最简单的网站就做成了，超简单，蛮有成就感的撒。</p>
+
+<h3 id="section-1">与其他框架搭配</h3>
+<p>一般来讲flask不会单独使用，它会和其他框架一起共同组成服务器。本人用到得如下：</p>
+
+<ul>
+  <li>SQLAlchemy,数据库对象和python对象相互对应的工具。</li>
+  <li>Fabric,超简单的远程部署工具，一键部署，强烈推荐。</li>
+  <li>Redis, 可以当缓存使用</li>
+  <li>alembic, 数据库迁移工具, 数据库升级,降级,备份。</li>
+  <li>Celery, 异步工作队列工具,用它和redis配合做一些耗时的工作。</li>
+  <li>uwsgi, 部署flask应用的服务器。</li>
+</ul>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2013-10-26T00:00:00-04:00"><a href="/background-image/">October 26, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About xiaofei">xiaofei</a></span></span>
       
       <span class="entry-reading-time">

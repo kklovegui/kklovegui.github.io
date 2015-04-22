@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Post with a Background Image &#8211; 炼金工坊</title>
-<meta name="description" content="Sample post with a background image CSS override.">
-<meta name="keywords" content="sample post">
+<title>flask 简介 &#8211; 炼金工坊</title>
+<meta name="description" content="python微型web框架">
+<meta name="keywords" content="">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Post with a Background Image">
-<meta property="og:description" content="Sample post with a background image CSS override.">
-<meta property="og:url" content="/background-image/">
+<meta property="og:title" content="flask 简介">
+<meta property="og:description" content="python微型web框架">
+<meta property="og:url" content="/flask-01/">
 <meta property="og:site_name" content="炼金工坊">
 
 
 
 
 
-<link rel="canonical" href="/background-image/">
+<link rel="canonical" href="/flask-01/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="炼金工坊 Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -55,10 +55,6 @@
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
-
-
-
-<style type="text/css">body {background-image:url(/images/triangular.png);}</style>
 
 
 </head>
@@ -112,9 +108,9 @@
     <header class="header-title">
       <div class="header-title-wrap">
         
-          <h1 class="entry-title"><a href="/background-image/" rel="bookmark" title="Post with a Background Image">Post with a Background Image</a></h1>
+          <h1 class="entry-title"><a href="/flask-01/" rel="bookmark" title="flask 简介">flask 简介</a></h1>
         
-        <h2><span class="entry-date date published"><time datetime="2013-10-26T00:00:00-04:00">October 26, 2013</time></span></h2>
+        <h2><span class="entry-date date published"><time datetime="2015-04-22T00:00:00-04:00">April 22, 2015</time></span></h2>
         
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
@@ -125,25 +121,57 @@
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <p>Here be a sample post with a custom background image. To utilize this “feature” just add the following YAML to a post’s front matter.</p>
+      <p>最近用flask给手机端做web api，这里记录最近学习心得。</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">background</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">filename.png</span></code></pre></div>
+<h3 id="section">简介</h3>
+<p>flask是一个微型web框架，用python进行开发，flask结构清晰简单，容易学习。</p>
 
-<p>This little bit of YAML makes the assumption that your background image asset is in the <code>/images</code> folder. If you place it somewhere else or are hotlinking from the web, just include the full http(s):// URL. Either way you should have a background image that is tiled.</p>
+<ul>
+  <li>创建一个新的python开发虚拟环境，不会同学google之。</li>
+  <li>安装flask</li>
+</ul>
 
-<p>If you want to set a background image for the entire site just add <code>background: filename.png</code> to your <code>_config.yml</code> and BOOM — background images on every page!</p>
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="x">pip install flask</span></code></pre></div>
 
-<div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://subtlepatterns.com" class="notice">Background images from <span property="dct:title">Subtle Patterns</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://subtlepatterns.com">Subtle Patterns</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></div>
+<p>-官网的demo,新建一个python文件。</p>
+
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="x">from flask import Flask</span>
+<span class="x">app = Flask(__name__)</span>
+
+<span class="x">@app.route(&#39;/&#39;)</span>
+<span class="x">def hello():</span>
+<span class="x">    return &#39;hello world&#39;</span>
+
+<span class="x">if __name__ == &#39;__main__&#39;:</span>
+<span class="x">   app.run()</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="x">python filename.py</span></code></pre></div>
+
+<p>浏览器访问 http://localhost:5000/</p>
+
+<p>一个最简单的网站就做成了，超简单，蛮有成就感的撒。</p>
+
+<h3 id="section-1">与其他框架搭配</h3>
+<p>一般来讲flask不会单独使用，它会和其他框架一起共同组成服务器。本人用到得如下：</p>
+
+<ul>
+  <li>SQLAlchemy,数据库对象和python对象相互对应的工具。</li>
+  <li>Fabric,超简单的远程部署工具，一键部署，强烈推荐。</li>
+  <li>Redis, 可以当缓存使用</li>
+  <li>alembic, 数据库迁移工具, 数据库升级,降级,备份。</li>
+  <li>Celery, 异步工作队列工具,用它和redis配合做一些耗时的工作。</li>
+  <li>uwsgi, 部署flask应用的服务器。</li>
+</ul>
+
 
       <footer class="entry-meta">
-        <span class="entry-tags"><a href="/tags/#sample post" title="Pages tagged sample post" class="tag"><span class="term">sample post</span></a></span>
+        <span class="entry-tags"></span>
         
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/background-image/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/background-image/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=/background-image/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/flask-01/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/flask-01/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/flask-01/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
       </footer>
@@ -152,11 +180,11 @@
     <div class="read-more">
   
     <div class="read-more-header">
-      <a href="/sample-post-images/" class="read-more-btn">Read More</a>
+      <a href="/background-image/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/flask-01/" title="flask 简介">flask 简介</a></h3>
-      <p>python微型web框架 <a href="/flask-01/">Continue reading</a></p>
+      <h3><a href="/background-image/" title="Post with a Background Image">Post with a Background Image</a></h3>
+      <p>Sample post with a background image CSS override. <a href="/background-image/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">

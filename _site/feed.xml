@@ -4,13 +4,73 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-04-15T08:37:31-04:00</updated>
+<updated>2015-04-22T09:53:53-04:00</updated>
 <id>/</id>
 <author>
   <name>xiaofei</name>
   <uri>/</uri>
   <email>xfhe19841104@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[flask 简介]]></title>
+ <link rel="alternate" type="text/html" href="/flask-01/" />
+  <id>/flask-01</id>
+  <published>2015-04-22T00:00:00-04:00</published>
+  <updated>2015-04-22T00:00:00-04:00</updated>
+  <author>
+    <name>xiaofei</name>
+    <uri></uri>
+    <email>xfhe19841104@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;最近用flask给手机端做web api，这里记录最近学习心得。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;简介&lt;/h3&gt;
+&lt;p&gt;flask是一个微型web框架，用python进行开发，flask结构清晰简单，容易学习。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建一个新的python开发虚拟环境，不会同学google之。&lt;/li&gt;
+  &lt;li&gt;安装flask&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-jinja&quot; data-lang=&quot;jinja&quot;&gt;&lt;span class=&quot;x&quot;&gt;pip install flask&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;-官网的demo,新建一个python文件。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-jinja&quot; data-lang=&quot;jinja&quot;&gt;&lt;span class=&quot;x&quot;&gt;from flask import Flask&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;app = Flask(__name__)&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;@app.route(&amp;#39;/&amp;#39;)&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;def hello():&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    return &amp;#39;hello world&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;if __name__ == &amp;#39;__main__&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;   app.run()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-jinja&quot; data-lang=&quot;jinja&quot;&gt;&lt;span class=&quot;x&quot;&gt;python filename.py&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;浏览器访问 http://localhost:5000/&lt;/p&gt;
+
+&lt;p&gt;一个最简单的网站就做成了，超简单，蛮有成就感的撒。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;与其他框架搭配&lt;/h3&gt;
+&lt;p&gt;一般来讲flask不会单独使用，它会和其他框架一起共同组成服务器。本人用到得如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SQLAlchemy,数据库对象和python对象相互对应的工具。&lt;/li&gt;
+  &lt;li&gt;Fabric,超简单的远程部署工具，一键部署，强烈推荐。&lt;/li&gt;
+  &lt;li&gt;Redis, 可以当缓存使用&lt;/li&gt;
+  &lt;li&gt;alembic, 数据库迁移工具, 数据库升级,降级,备份。&lt;/li&gt;
+  &lt;li&gt;Celery, 异步工作队列工具,用它和redis配合做一些耗时的工作。&lt;/li&gt;
+  &lt;li&gt;uwsgi, 部署flask应用的服务器。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/flask-01/&quot;&gt;flask 简介&lt;/a&gt; was originally published by xiaofei at &lt;a href=&quot;&quot;&gt;炼金工坊&lt;/a&gt; on April 22, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
